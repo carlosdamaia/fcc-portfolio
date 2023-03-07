@@ -56,7 +56,7 @@ html {
     justify-content: center;
 }
 
-#welcome-section #welcome-title {
+#welcome-title {
     font-size: 8rem;
     font-weight: 800;
 }
@@ -75,9 +75,10 @@ html {
     display: grid;
     background-color: var(--blue);
     grid-template-columns: repeat(3, minmax(6.25rem, 1fr));
-    grid-template-rows: repeat(3, minmax(6.25rem, 1fr)); 
+    grid-template-rows: auto repeat(2, minmax(6.25rem, 1fr)); 
     gap: 1.625rem;
     padding: 0 1.625rem;
+    place-items: stretch center;
 }
 
 #projects #projects-section-title {
@@ -92,13 +93,13 @@ html {
 }
 
 .project-card {
+    max-width: 400px;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: white;
     text-decoration: none;
-    max-height: auto;
 }
 
 .project-card:visited {
@@ -121,17 +122,20 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    font-weight: 300;
     padding: 1.25rem 0;
     background-color: var(--gray);
+}
+
+.project-tile {
+    font-size: 2rem;
+    font-weight: 300;
 }
 
 .project-card .project-title::before {
     color: orangered;
     font-size: 4rem;
-    margin-right: 5px;
     content: "<";
+    margin: 0 2px 0 12px;
     opacity: 0;
     transition: .5s ease;
 }
@@ -144,7 +148,6 @@ html {
 .project-card .project-title::after {
     color: orangered;
     font-size: 4rem;
-    margin-left: 5px;
     content: "/>";
     opacity: 0;
     transition: .5s ease;
@@ -175,4 +178,76 @@ html {
 
 #show-all:hover {
     background-color: var(--red);
+}
+
+#contact {
+    color: white;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    height: calc(95vh - 69px);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.contact-introduction {
+    text-align: center;
+}
+
+#contact-title {
+    font-size: 6rem;
+    font-weight: 800;
+}
+
+.title-description {
+    font-style: italic;
+    font-size: 2rem;
+}
+
+.contact-links {
+    margin: 1.25rem 0;
+}
+
+.contact-links .fa {
+    margin-right: 10px;
+    font-size: 3.5rem;
+}
+
+.contact-links .contact-details {
+    font-size: 3rem;
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+}
+
+footer {
+    color: white;
+    background-color: var(--gray);
+    border-top: 4px var(--red) solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 0;
+    font-size: 2rem;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .fa {
+    margin: 0 .625rem;
+}
+
+@media only screen and (max-width: 320px) {
+    #projects {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        text-align: center;
+    }
 }

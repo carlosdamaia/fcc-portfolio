@@ -59,6 +59,7 @@ html {
 #welcome-title {
     font-size: 8rem;
     font-weight: 800;
+    text-align: center;
 }
 
 #welcome-section #welcome-message {
@@ -79,6 +80,7 @@ html {
     gap: 1.625rem;
     padding: 0 1.625rem;
     place-items: stretch center;
+    text-align: center;
 }
 
 #projects #projects-section-title {
@@ -219,11 +221,13 @@ html {
     text-decoration: none;
     color: white;
     margin: 0 15px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.contact-links .contact-details:hover {
-    transform: translateY(90);
-    color: yellow;
+.contact-links .contact-details:hover i {
+    transform: scale(1.2);
+    color: var(--red);
+    transition: transform 0.3s ease-in-out;
 }
 
 footer {
@@ -247,12 +251,110 @@ footer .fa {
     margin: 0 .625rem;
 }
 
-@media only screen and (max-width: 320px) {
-    #projects {
-        grid-template-columns: 1fr;
+@media only screen and (max-width: 878px) {
+    .contact-links {
+        display: grid;
+        text-align: center;
+    }
+
+    .contact-links .contact-details {
+        margin-top: 30px;
     }
 
     footer {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    #projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    #header {
+        padding: 0 5%;
+    }
+
+    #header #navbar .nav-links {
+        font-size: 1.6rem;
+        margin-left: 0;
+        padding: 1.6625rem .5rem;
+    }
+
+    #welcome-title {
+        text-align: center;
+        font-size: 6rem;
+    }
+
+    #projects #projects-section-title {
+        font-size: 3rem;
+    }
+
+    .project-card {
+        max-width: 300px;
+    }
+
+    #contact-title {
+        font-size: 4rem;
+    }
+
+    .contact-links .fa {
+        margin-right: 0.3125rem;
+        font-size: 1.6rem;
+    }
+
+    .contact-links a.contact-details {
+        font-size: 1.6rem;
+    }
+
+    footer {
+        padding: 0 1rem;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #welcome-title {
+        text-align: center;
+        font-size: 5rem;
+    }
+
+    #welcome-section #welcome-message {
+        font-size: 3rem;
+    }
+    
+    #projects {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    #projects #projects-section-title {
+        font-size: 2.5rem;
+    }
+
+    .project-card {
+        max-width: 300px;
+    }
+
+    #contact-title {
+        font-size: 4rem;
+    }
+
+    .contact-links .fa {
+        margin-right: 0.3125rem;
+        font-size: 1.6rem;
+    }
+
+    .contact-links a.contact-details {
+        font-size: 1.6rem;
+    }
+
+    footer {
+        padding: 0 1rem;
+        font-size: 1.6rem;
         text-align: center;
     }
 }

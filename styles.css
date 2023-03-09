@@ -185,7 +185,7 @@ html {
     background-color: var(--gray);
     display: flex;
     flex-direction: column;
-    height: calc(95vh - 69px);
+    height: calc(96vh - 69px);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -219,6 +219,11 @@ html {
     text-decoration: none;
     color: white;
     margin: 0 15px;
+}
+
+.contact-links .contact-details:hover {
+    transform: translateY(90);
+    color: yellow;
 }
 
 footer {
